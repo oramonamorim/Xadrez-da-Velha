@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 0px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.cell.white {
+    background-color: #fff;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.cell.gray {
+    background-color: #d3d3d3;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.piece-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    height: 100px; /* Define a altura fixa para o contêiner das peças */
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.piece {
+    cursor: grabbing;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+.message-container {
+    min-height: 50px; /* Altura mínima para a área da mensagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.message {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.hidden {
+    display: none;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+#reset-button {
+    margin-top: 20px;
+}
+
+            margin-top: 20px;
+        }
+    </style>
+ 
+
+
+
+
+   <title>Chess Tic-Tac-Toe</title>
+</head>
+<body>
+    <div id="game-container">
+        <div class="message" id="message">As Pretas Começam!</div>
+        <div id="board">
+            <div class="cell white" data-pos="0-0"></div>
+            <div class="cell gray" data-pos="0-1"></div>
+            <div class="cell white" data-pos="0-2"></div>
+            <div class="cell gray" data-pos="0-3"></div>
+            <div class="cell gray" data-pos="1-0"></div>
+            <div class="cell white" data-pos="1-1"></div>
+            <div class="cell gray" data-pos="1-2"></div>
+            <div class="cell white" data-pos="1-3"></div>
+            <div class="cell white" data-pos="2-0"></div>
+            <div class="cell gray" data-pos="2-1"></div>
+            <div class="cell white" data-pos="2-2"></div>
+            <div class="cell gray" data-pos="2-3"></div>
+            <div class="cell gray" data-pos="3-0"></div>
+            <div class="cell white" data-pos="3-1"></div>
+            <div class="cell gray" data-pos="3-2"></div>
+            <div class="cell white" data-pos="3-3"></div>
+        </div>
+        <div class="piece-container" id="black-pieces">
+            <img src="queen_black.png" alt="Black Queen" class="piece" draggable="true">
+            <img src="rook_black.png" alt="Black Rook" class="piece" draggable="true">
+            <img src="bishop_black.png" alt="Black Bishop" class="piece" draggable="true">
+            <img src="knight_black.png" alt="Black Knight" class="piece" draggable="true">
+        </div>
+        <div class="piece-container" id="white-pieces">
+            <img src="queen_white.png" alt="White Queen" class="piece" draggable="true">
+            <img src="rook_white.png" alt="White Rook" class="piece" draggable="true">
+            <img src="bishop_white.png" alt="White Bishop" class="piece" draggable="true">
+            <img src="knight_white.png" alt="White Knight" class="piece" draggable="true">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

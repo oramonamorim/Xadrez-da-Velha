@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 0px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.cell.white {
+    background-color: #fff;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.cell.gray {
+    background-color: #d3d3d3;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.piece-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    height: 100px; /* Define a altura fixa para o contêiner das peças */
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.piece {
+    cursor: grabbing;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+img {
+    width: 80px;
+    height: 80px;
+}
+
+.message-container {
+    min-height: 50px; /* Altura mínima para a área da mensagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.message {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+.hidden {
+    display: none;
+    user-select: none; /* Desabilita a seleção de texto */
+}
+
+#reset-button {
+    margin-top: 20px;
+}
